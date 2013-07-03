@@ -11,10 +11,13 @@ namespace AsyncFizzBuzz.Wpf
         public static async Task<string> ReturnTheFizzBuzzValue(int i, int seconds)
         {
             string s = null;
-            if (i % 3 == 0)
-                s = "fizz";
-            if (i % 5 == 0)
-                s = s + "buzz";
+            if (i > 0)
+            {
+                if (i%3 == 0)
+                    s = "fizz";
+                if (i%5 == 0)
+                    s = s + "buzz";
+            }
             if (String.IsNullOrWhiteSpace(s))
                 s = i.ToString();
             await Task.Delay(seconds * 1000);
